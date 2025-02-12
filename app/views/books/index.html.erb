@@ -1,0 +1,30 @@
+<h1>Available Books</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>ISBN</th>
+      <th>Status</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= link_to book.title, book_path(book) %></td>
+        <td><%= book.author %></td>
+        <td><%= book.isbn %></td>
+        <td><%= book.available? ? "Available" : "Borrowed" %></td>
+        <td>
+          <% if book.available? %>
+            <%= button_to "Borrow", borrow_book_path(book), method: :post %>
+          <% else %>
+            <span>Not available</span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

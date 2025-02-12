@@ -5,5 +5,7 @@ class Book < ApplicationRecord
   validates :title, :author, :isbn, presence: true
   validates :isbn, uniqueness: true
 
-  enum status: { available: "available", borrowed: "borrowed" }
+  def available?
+    borrowings.where(returned_at: nil).empty?
+  end
 end
