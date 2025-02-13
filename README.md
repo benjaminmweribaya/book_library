@@ -177,5 +177,5 @@ This project is licensed under the MIT License.
 ---
 
 ## Author
-**Name:** Benjamin Mweri Baya
-**Email:** b3njaminbaya@gmail.com
+- **Name:** Benjamin Mweri Baya
+- **Email:** b3njaminbaya@gmail.com
