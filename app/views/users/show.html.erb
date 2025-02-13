@@ -1,0 +1,31 @@
+<h1><%= @user.email %>'s Profile</h1>
+
+<h2>Borrowed Books</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>ISBN</th>
+      <th>Borrowed On</th>
+      <th>Due Date</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @user.borrowings.where(returned_at: nil).each do |borrowing| %>
+      <tr>
+        <td><%= borrowing.book.title %></td>
+        <td><%= borrowing.book.author %></td>
+        <td><%= borrowing.book.isbn %></td>
+        <td><%= borrowing.created_at.strftime("%B %d, %Y") %></td>
+        <td><%= borrowing.due_date.strftime("%B %d, %Y") %></td>
+        <td>
+          <%= button_to "Return", return_book_path(borrowing.book), method: :post %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "Back to Home", root_path %>

@@ -10,12 +10,11 @@ Rails.application.routes.draw do
 
   # User routes (assuming users have profiles)
   resources :users, only: [ :show ]
+  get "profile", to: "users#show", as: "user_profile"
 
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
-  resources :users
-  resources :books
   resources :borrowings
 end
