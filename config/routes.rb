@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :books, only: [ :index, :show ] do
     member do
       post "borrow"
-      post "return"
+      post "return", to: "borrowings#return_book"
     end
   end
 
