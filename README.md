@@ -118,26 +118,145 @@ The tests ensure:
 ## Project Structure
 ```
 book-lending-library/
-│-- app/
-│   ├── controllers/
-│   │   ├── application_controller.rb
-│   │   ├── books_controller.rb
-│   │   ├── borrowings_controller.rb
-│   │   ├── sessions_controller.rb
-│   │   ├── users_controller.rb
-│   ├── models/
-│   │   ├── book.rb
-│   │   ├── borrowing.rb
-│   │   ├── user.rb
-│   ├── views/
-│   │   ├── books/
-│   │   ├── borrowings/
-│   │   ├── users/
-│-- config/
-│-- db/
-│-- test/
-│-- Gemfile
-│-- README.md
+├── Dockerfile
+├── Gemfile
+├── Gemfile.lock
+├── LICENSE
+├── README.md
+├── Rakefile
+├── app
+│   ├── assets
+│   │   ├── images
+│   │   └── stylesheets
+│   ├── controllers
+│   │   ├── application_controller.rb
+│   │   ├── books_controller.rb
+│   │   ├── borrowings_controller.rb
+│   │   ├── concerns
+│   │   ├── sessions_controller.rb
+│   │   └── users_controller.rb
+│   ├── helpers
+│   │   ├── application_helper.rb
+│   │   ├── books_helper.rb
+│   │   ├── sessions_helper.rb
+│   │   └── users_helper.rb
+│   ├── javascript
+│   │   ├── application.js
+│   │   └── controllers
+│   ├── jobs
+│   │   └── application_job.rb
+│   ├── mailers
+│   │   └── application_mailer.rb
+│   ├── models
+│   │   ├── application_record.rb
+│   │   ├── book.rb
+│   │   ├── borrowing.rb
+│   │   ├── concerns
+│   │   └── user.rb
+│   └── views
+│       ├── books
+│       ├── layouts
+│       ├── pwa
+│       ├── sessions
+│       └── users
+├── bin
+│   ├── brakeman
+│   ├── bundle
+│   ├── dev
+│   ├── docker-entrypoint
+│   ├── importmap
+│   ├── jobs
+│   ├── kamal
+│   ├── rails
+│   ├── rake
+│   ├── rubocop
+│   ├── setup
+│   └── thrust
+├── config
+│   ├── application.rb
+│   ├── boot.rb
+│   ├── cable.yml
+│   ├── cache.yml
+│   ├── credentials.yml.enc
+│   ├── database.yml
+│   ├── deploy.yml
+│   ├── environment.rb
+│   ├── environments
+│   │   ├── development.rb
+│   │   ├── production.rb
+│   │   └── test.rb
+│   ├── importmap.rb
+│   ├── initializers
+│   │   ├── assets.rb
+│   │   ├── content_security_policy.rb
+│   │   ├── filter_parameter_logging.rb
+│   │   └── inflections.rb
+│   ├── locales
+│   │   └── en.yml
+│   ├── master.key
+│   ├── puma.rb
+│   ├── queue.yml
+│   ├── recurring.yml
+│   ├── routes.rb
+│   └── storage.yml
+├── config.ru
+├── db
+│   ├── cable_schema.rb
+│   ├── cache_schema.rb
+│   ├── migrate
+│   │   ├── 20250212205903_create_books.rb
+│   │   ├── 20250212210000_create_users.rb
+│   │   └── 20250212210110_create_borrowings.rb
+│   ├── queue_schema.rb
+│   ├── schema.rb
+│   └── seeds.rb
+├── lib
+│   └── tasks
+├── log
+│   └── development.log
+├── public
+│   ├── 400.html
+│   ├── 404.html
+│   ├── 406-unsupported-browser.html
+│   ├── 422.html
+│   ├── 500.html
+│   ├── icon.png
+│   ├── icon.svg
+│   └── robots.txt
+├── script
+├── storage
+├── test
+│   ├── application_system_test_case.rb
+│   ├── controllers
+│   │   ├── books_controller_test.rb
+│   │   ├── borrowings_controller_test.rb
+│   │   ├── sessions_controller_test.rb
+│   │   └── users_controller_test.rb
+│   ├── fixtures
+│   │   ├── books.yml
+│   │   ├── borrowings.yml
+│   │   ├── files
+│   │   └── users.yml
+│   ├── helpers
+│   ├── integration
+│   ├── mailers
+│   ├── models
+│   │   ├── book_test.rb
+│   │   ├── borrowing_test.rb
+│   │   └── user_test.rb
+│   ├── system
+│   └── test_helper.rb
+├── tmp
+│   ├── cache
+│   │   └── bootsnap
+│   ├── local_secret.txt
+│   ├── pids
+│   │   └── server.pid
+│   ├── restart.txt
+│   ├── sockets
+│   └── storage
+└── vendor
+    └── javascript
 ```
 
 ---

@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   # User routes (assuming users have profiles)
-  resources :users, only: [ :show ]
+  resources :users, only: [ :new, :create, :show ]
   get "profile", to: "users#show", as: "user_profile"
 
   get "/login", to: "sessions#new"
