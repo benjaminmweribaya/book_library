@@ -53,7 +53,7 @@ Ensure you have the following installed:
 
 ### Clone the Repository
 ```sh
-$ git clone https://github.com/your-username/book-lending-library.git
+$ git clone https://github.com/benjaminmweribaya/book-lending-library.git
 $ cd book-lending-library
 ```
 
